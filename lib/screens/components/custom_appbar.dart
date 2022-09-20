@@ -38,8 +38,8 @@ class CustomAppbar extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: ),
-            child: Expanded(flex: 1, child: NewSearchWindow()),
+            padding: EdgeInsets.only(right: 0),
+            child: Expanded(flex: 1, child: Container()),
           ),
           // ProfileInfo()
         ],

@@ -6,6 +6,7 @@ import 'package:responsive_admin_dashboard/screens/components/analytic_cards.dar
 import 'package:responsive_admin_dashboard/screens/components/custom_appbar.dart';
 import 'package:responsive_admin_dashboard/screens/components/top_referals.dart';
 import 'package:responsive_admin_dashboard/screens/components/users.dart';
+import 'package:responsive_admin_dashboard/screens/components/new_side_serach.dart';
 import 'package:responsive_admin_dashboard/screens/components/users_by_device.dart';
 import 'package:responsive_admin_dashboard/screens/components/viewers.dart';
 
@@ -54,7 +55,7 @@ class DashboardContent extends StatelessWidget {
                     if (!Responsive.isMobile(context))
                       Expanded(
                         flex: 2,
-                        child: Container(),
+                        child: NewSearchWindow(),
                       ),
                   ],
                 ),
@@ -68,6 +69,8 @@ class DashboardContent extends StatelessWidget {
                           SizedBox(
                             height: appPadding,
                           ),
+                          // if (Responsive.isMobile(context))
+                          //   NewSearchWindow(),
                           Row(
                             children: [
                               if(!Responsive.isMobile(context))
