@@ -7,9 +7,10 @@ import 'package:responsive_admin_dashboard/constants/responsive.dart';
 import 'package:responsive_admin_dashboard/models/analytic_info_model.dart';
 
 class AnalyticInfoCard extends StatelessWidget {
-  const AnalyticInfoCard({Key? key, required this.info}) : super(key: key);
+   AnalyticInfoCard({Key? key, required this.info,this.index}) : super(key: key);
 
   final AnalyticInfo info;
+  int ?index;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,8 @@ class AnalyticInfoCard extends StatelessWidget {
               offset: Offset(0, 3), // changes position of shadow
             ),
           ],
+          border:index==0? Border.all(width: 0.5):Border.all(color: Colors.transparent)
+
 
         ),
         child: Column(

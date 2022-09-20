@@ -165,6 +165,7 @@ class Users extends StatelessWidget {
                   Offset(0, 2), // changes position of shadow
                 ),
               ],
+              border: Border.all(width: 0.5),
               color: secondaryColor,
               borderRadius: BorderRadius.circular(10),
             ),

@@ -52,6 +52,7 @@ class AnalyticInfoCardGridView extends StatelessWidget {
       ),
       itemBuilder: (context, index) => AnalyticInfoCard(
         info: analyticData[index],
+        index: index,
       ),
     );
   }
