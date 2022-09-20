@@ -7,22 +7,23 @@ import 'package:responsive_admin_dashboard/constants/responsive.dart';
 import 'package:responsive_admin_dashboard/models/analytic_info_model.dart';
 
 class AnalyticInfoCard extends StatelessWidget {
-  const AnalyticInfoCard({Key? key, required this.info}) : super(key: key);
+   AnalyticInfoCard({Key? key, required this.info,this.index}) : super(key: key);
 
   final AnalyticInfo info;
+  int ?index;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: 10.sp,
-        vertical: 10.sp,
+        horizontal: 10,
+        vertical: 10,
       ),
       child: Container(
         // margin: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         padding: EdgeInsets.symmetric(
-          horizontal: 5.sp,
-          vertical: 5.sp,
+          horizontal: Responsive.isDesktop(context)? 14:Responsive.isTablet(context)?10:5,
+          vertical: Responsive.isDesktop(context)? 10:Responsive.isTablet(context)?10:5,
         ),
         decoration: BoxDecoration(
             color: secondaryColor, borderRadius: BorderRadius.circular(10),
@@ -34,6 +35,8 @@ class AnalyticInfoCard extends StatelessWidget {
               offset: Offset(0, 3), // changes position of shadow
             ),
           ],
+          border:index==0? Border.all(width: 0.5):Border.all(color: Colors.transparent)
+
 
         ),
         child: Column(
@@ -44,22 +47,22 @@ class AnalyticInfoCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  padding: EdgeInsets.all(appPadding / 2),
-                  height: 40,
-                  width: 40,
+                  // padding: EdgeInsets.all(appPadding / 2),
+                  height: Responsive.isDesktop(context)? 25:Responsive.isTablet(context)?20:10,
+                  width: Responsive.isDesktop(context)? 25:Responsive.isTablet(context)?20:10,
                   child:  Center(
-                    child: info.svgSrc,
+                    child: Icon(info.svgSrc,size: Responsive.isDesktop(context)? 25:Responsive.isTablet(context)?18:18,),
                   ),
                 ),
                 Container(
                     // padding: EdgeInsets.all(appPadding / 2),
-                    height: 30,
-                    width: 30,
+                    height: Responsive.isDesktop(context)? 20:Responsive.isTablet(context)?20:18,
+                    width: Responsive.isDesktop(context)? 20:Responsive.isTablet(context)?20:18,
                     decoration: BoxDecoration(
                         color: info.color!.withOpacity(0.1),
                         shape: BoxShape.circle),
                     child: Center(
-                      child: Icon(Icons.more_vert),
+                      child: Icon(Icons.more_vert,size:  Responsive.isDesktop(context)? 20:Responsive.isTablet(context)?18:18,),
                     )),
               ],
             ),
@@ -72,12 +75,12 @@ class AnalyticInfoCard extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.montserrat(
                     color: textColor,
-                    fontSize: Responsive.isMobile(context) || Responsive.isTablet(context) ? 11:14,
+                    fontSize: Responsive.isDesktop(context)? 12:Responsive.isTablet(context)?10:10,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Container(
 
@@ -88,7 +91,7 @@ class AnalyticInfoCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.montserrat(
                       color: Colors.grey,
-                      fontSize: Responsive.isMobile(context) || Responsive.isTablet(context) ? 11:14,
+                      fontSize:  Responsive.isDesktop(context)? 12:Responsive.isTablet(context)?10:10,
                       // fontWeight: FontWeight.w600,
                     ),
                   ),
