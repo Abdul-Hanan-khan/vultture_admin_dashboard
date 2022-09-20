@@ -14,6 +14,7 @@ class ReferalInfoDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Color(0xffFAF9F9),
       margin: EdgeInsets.only(top: appPadding),
       padding: EdgeInsets.all(appPadding / 2),
       child: Row(
