@@ -11,43 +11,54 @@ class NewSearchWindow extends StatelessWidget {
     return
       Obx(
           ()=>controller.Expanded.value==false?
-          Container(
+          Row(
+            children: [
+              Expanded(
+                  flex: 1,
 
-            height: 70.h,
-            decoration: BoxDecoration(
-              color: mainBackgroundColor,
-              borderRadius: BorderRadius.circular(15),
+                  child: Container()),
+              Expanded(
+                flex: 2,
+                child: Container(
 
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(Icons.date_range,color: Colors.white,),
-                Icon(Icons.notifications,color: Colors.white,),
-                Icon(Icons.textsms_outlined,color: Colors.white,),
-                Container(
-                  width: 30,
-                  height: 30,
+                  height: 70.h,
                   decoration: BoxDecoration(
+                    color: mainBackgroundColor,
+                    borderRadius: BorderRadius.circular(15),
 
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                        image: AssetImage("assets/images/photo3.jpg"),
-                        fit: BoxFit.fill
-                    ),
                   ),
-                  //child: Image.asset("assets/images/photo3.jpg",fit: BoxFit.fill,),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Icon(Icons.date_range,color: Colors.white,),
+                      Icon(Icons.notifications,color: Colors.white,),
+                      Icon(Icons.textsms_outlined,color: Colors.white,),
+                      Container(
+                        width: 30,
+                        height: 30,
+                        decoration: BoxDecoration(
+
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: AssetImage("assets/images/photo3.jpg"),
+                              fit: BoxFit.fill
+                          ),
+                        ),
+                        //child: Image.asset("assets/images/photo3.jpg",fit: BoxFit.fill,),
+                      ),
+                      GestureDetector(
+                          onTap: (){
+                            controller.Expanded.value=true;
+                          },
+                          child: Icon(Icons.keyboard_arrow_down,color: Colors.white,)),
+
+
+                    ],
+                  ),
                 ),
-                GestureDetector(
-                    onTap: (){
-                      controller.Expanded.value=true;
-                    },
-                    child: Icon(Icons.keyboard_arrow_down,color: Colors.white,)),
-
-
-              ],
-            ),
+              ),
+            ],
           ):
           Container(
 
