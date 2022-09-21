@@ -14,12 +14,13 @@ class NewSearchWindow extends StatelessWidget {
           ()=>controller.Expanded.value==false?
           Row(
             children: [
-              Expanded(
+              if (!Responsive.isMobile(context))
+                Expanded(
                   flex: 1,
 
                   child: Container()),
               Expanded(
-                flex: 1,
+                flex: Responsive.isMobile(context)?2:1,
                 child: Container(
 
                   height: 70.h,
@@ -74,12 +75,12 @@ class NewSearchWindow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: 380.w,
+                  width:380,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
-                        width: 250.w,
+                        width: Responsive.isMobile(context)?210:250,
                         height: 70.h,
                         decoration: BoxDecoration(
                           color: mainBackgroundColor,
@@ -116,411 +117,415 @@ class NewSearchWindow extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding:EdgeInsets.only(top: 5,bottom: 30),
-                        child: Container(
+                      Center(
+                        child: Padding(
+                          padding:EdgeInsets.only(top: 5,bottom: 30),
+                          child: Container(
+                            width:Responsive.isMobile(context)?330:380,
 
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
 
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15),
-
-                          ),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Text("Messages ",style: TextStyle(fontWeight: FontWeight.bold),),
-                                        Text("(2)",style: TextStyle(color: Colors.blueAccent),)
-                                      ],
-                                    ),
-                                    Icon(Icons.more_horiz)
-                                  ],
-                                ),
-                              ),
-                              Padding(
+                            ),
+                            child: Column(
+                              children: [
+                                Padding(
                                   padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
-                                  child: Container(
-
-
-                                    height: 28.h,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black12,
-                                      borderRadius: BorderRadius.circular(26),
-
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 23.w),
-                                          child: Icon(Icons.search,size: 18.sp,),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 23.w),
-                                          child: Text("search",style: TextStyle(
-                                              fontSize: 16.sp
-                                          ),),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                              ),
-                              Padding(
-                                  padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
-                                  child: Container(
-
-                                    width: Get.width.w/0.2,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-
-                                          child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            children: [
-                                              Container(
-                                                  width: 30,
-                                                  height: 30,
-                                                  color: Colors.black12,
-                                                  child: Icon(Icons.person)
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.only(left:20.w),
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text("Email"),
-                                                    Text("asadhayat")
-                                                  ],
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 23.w),
-                                          child: Text("search",style: TextStyle(
-                                              fontSize: 13.sp
-                                          ),),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 6.h),
-                                child: Container(
-                                  width: Get.width.w,
-                                  height: 1,
-                                  color: Colors.black12,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text("Messages ",style: TextStyle(fontWeight: FontWeight.bold),),
+                                          Text("(2)",style: TextStyle(color: Colors.blueAccent),)
+                                        ],
+                                      ),
+                                      Icon(Icons.more_horiz)
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                  padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
-                                  child: Container(
+                                Padding(
+                                    padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
+                                    child: Container(
 
-                                    width: Get.width.w/0.2,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
 
-                                          child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            children: [
-                                              Container(
-                                                  width: 30,
-                                                  height: 30,
-                                                  color: Colors.black12,
-                                                  child: Icon(Icons.person)
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.only(left:20.w),
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text("Email"),
-                                                    Text("asadhayat")
-                                                  ],
-                                                ),
-                                              )
-                                            ],
+                                      height: 28.h,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black12,
+                                        borderRadius: BorderRadius.circular(26),
+
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.only(left: 23.w),
+                                            child: Icon(Icons.search,size: 18,),
                                           ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 23.w),
-                                          child: Text("search",style: TextStyle(
-                                              fontSize: 13.sp
-                                          ),),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 6.h),
-                                child: Container(
-                                  width: Get.width.w,
-                                  height: 1,
-                                  color: Colors.black12,
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 23.w),
+                                            child: Text("search",style: TextStyle(
+                                                fontSize: 16
+                                            ),),
+                                          )
+                                        ],
+                                      ),
+                                    )
                                 ),
-                              ),
-                              Padding(
-                                  padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w,bottom: 19.h),
-                                  child: Container(
+                                Padding(
+                                    padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
+                                    child: Container(
 
-                                    width: Get.width.w/0.2,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
+                                      width: Get.width.w/0.2,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
 
-                                          child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            children: [
-                                              Container(
-                                                  width: 30,
-                                                  height: 30,
-                                                  color: Colors.black12,
-                                                  child: Icon(Icons.person)
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.only(left:20.w),
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text("Email"),
-                                                    Text("asadhayat")
-                                                  ],
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                    width: 30,
+                                                    height: 30,
+                                                    color: Colors.black12,
+                                                    child: Icon(Icons.person)
                                                 ),
-                                              )
-                                            ],
+                                                Padding(
+                                                  padding: EdgeInsets.only(left:20.w),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text("Email"),
+                                                      Text("asadhayat")
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 23.w),
-                                          child: Text("search",style: TextStyle(
-                                              fontSize: 13.sp
-                                          ),),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                              ),
-                            ],
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 23.w),
+                                            child: Text("search",style: TextStyle(
+                                                fontSize: 13
+                                            ),),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 6.h),
+                                  child: Container(
+                                    width: Get.width.w,
+                                    height: 1,
+                                    color: Colors.black12,
+                                  ),
+                                ),
+                                Padding(
+                                    padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
+                                    child: Container(
+
+                                      width: Get.width.w/0.2,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                    width: 30,
+                                                    height: 30,
+                                                    color: Colors.black12,
+                                                    child: Icon(Icons.person)
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(left:20.w),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text("Email"),
+                                                      Text("asadhayat")
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 23.w),
+                                            child: Text("search",style: TextStyle(
+                                                fontSize: 13
+                                            ),),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 6.h),
+                                  child: Container(
+                                    width: Get.width.w,
+                                    height: 1,
+                                    color: Colors.black12,
+                                  ),
+                                ),
+                                Padding(
+                                    padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w,bottom: 19.h),
+                                    child: Container(
+
+                                      width: Get.width.w/0.2,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                    width: 30,
+                                                    height: 30,
+                                                    color: Colors.black12,
+                                                    child: Icon(Icons.person)
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(left:20.w),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text("Email"),
+                                                      Text("asadhayat")
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 23.w),
+                                            child: Text("search",style: TextStyle(
+                                                fontSize: 13
+                                            ),),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                      Padding(
-                        padding:EdgeInsets.only(top: 5,bottom: 50),
-                        child: Container(
+                      Center(
+                        child: Padding(
+                          padding:EdgeInsets.only(top: 5,bottom: 30),
+                          child: Container(
+                            width:Responsive.isMobile(context)?330:380,
 
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
 
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15),
-
-                          ),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Text("Messages ",style: TextStyle(fontWeight: FontWeight.bold),),
-                                        Text("(2)",style: TextStyle(color: Colors.blueAccent),)
-                                      ],
-                                    ),
-                                    Icon(Icons.more_horiz)
-                                  ],
-                                ),
-                              ),
-                              Padding(
+                            ),
+                            child: Column(
+                              children: [
+                                Padding(
                                   padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
-                                  child: Container(
-
-                                    width: Get.width.w/0.2,
-                                    height: 28.h,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black12,
-                                      borderRadius: BorderRadius.circular(26),
-
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 23.w),
-                                          child: Icon(Icons.search,size: 18.sp,),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 23.w),
-                                          child: Text("search",style: TextStyle(
-                                              fontSize: 16.sp
-                                          ),),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                              ),
-                              Padding(
-                                  padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
-                                  child: Container(
-
-                                    width: Get.width.w/0.2,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-
-                                          child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            children: [
-                                              Container(
-                                                  width: 30,
-                                                  height: 30,
-                                                  color: Colors.black12,
-                                                  child: Icon(Icons.person)
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.only(left:20.w),
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text("Email"),
-                                                    Text("asadhayat")
-                                                  ],
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 23.w),
-                                          child: Text("search",style: TextStyle(
-                                              fontSize: 13.sp
-                                          ),),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 6.h),
-                                child: Container(
-                                  width: Get.width.w,
-                                  height: 1,
-                                  color: Colors.black12,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text("Messages ",style: TextStyle(fontWeight: FontWeight.bold),),
+                                          Text("(2)",style: TextStyle(color: Colors.blueAccent),)
+                                        ],
+                                      ),
+                                      Icon(Icons.more_horiz)
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                  padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
-                                  child: Container(
+                                Padding(
+                                    padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
+                                    child: Container(
 
-                                    width: Get.width.w/0.2,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
 
-                                          child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            children: [
-                                              Container(
-                                                  width: 30,
-                                                  height: 30,
-                                                  color: Colors.black12,
-                                                  child: Icon(Icons.person)
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.only(left:20.w),
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text("Email"),
-                                                    Text("asadhayat")
-                                                  ],
-                                                ),
-                                              )
-                                            ],
+                                      height: 28.h,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black12,
+                                        borderRadius: BorderRadius.circular(26),
+
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.only(left: 23.w),
+                                            child: Icon(Icons.search,size: 18,),
                                           ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 23.w),
-                                          child: Text("search",style: TextStyle(
-                                              fontSize: 13.sp
-                                          ),),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 6.h),
-                                child: Container(
-                                  width: Get.width.w,
-                                  height: 1,
-                                  color: Colors.black12,
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 23.w),
+                                            child: Text("search",style: TextStyle(
+                                                fontSize: 16
+                                            ),),
+                                          )
+                                        ],
+                                      ),
+                                    )
                                 ),
-                              ),
-                              Padding(
-                                  padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w,bottom: 19.h),
-                                  child: Container(
+                                Padding(
+                                    padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
+                                    child: Container(
 
-                                    width: Get.width.w/0.2,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
+                                      width: Get.width.w/0.2,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
 
-                                          child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            children: [
-                                              Container(
-                                                  width: 30,
-                                                  height: 30,
-                                                  color: Colors.black12,
-                                                  child: Icon(Icons.person)
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.only(left:20.w),
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text("Email"),
-                                                    Text("asadhayat")
-                                                  ],
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                    width: 30,
+                                                    height: 30,
+                                                    color: Colors.black12,
+                                                    child: Icon(Icons.person)
                                                 ),
-                                              )
-                                            ],
+                                                Padding(
+                                                  padding: EdgeInsets.only(left:20.w),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text("Email"),
+                                                      Text("asadhayat")
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 23.w),
-                                          child: Text("search",style: TextStyle(
-                                              fontSize: 13.sp
-                                          ),),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                              ),
-                            ],
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 23.w),
+                                            child: Text("search",style: TextStyle(
+                                                fontSize: 13
+                                            ),),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 6.h),
+                                  child: Container(
+                                    width: Get.width.w,
+                                    height: 1,
+                                    color: Colors.black12,
+                                  ),
+                                ),
+                                Padding(
+                                    padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
+                                    child: Container(
+
+                                      width: Get.width.w/0.2,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                    width: 30,
+                                                    height: 30,
+                                                    color: Colors.black12,
+                                                    child: Icon(Icons.person)
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(left:20.w),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text("Email"),
+                                                      Text("asadhayat")
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 23.w),
+                                            child: Text("search",style: TextStyle(
+                                                fontSize: 13
+                                            ),),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 6.h),
+                                  child: Container(
+                                    width: Get.width.w,
+                                    height: 1,
+                                    color: Colors.black12,
+                                  ),
+                                ),
+                                Padding(
+                                    padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w,bottom: 19.h),
+                                    child: Container(
+
+                                      width: Get.width.w/0.2,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                    width: 30,
+                                                    height: 30,
+                                                    color: Colors.black12,
+                                                    child: Icon(Icons.person)
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(left:20.w),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text("Email"),
+                                                      Text("asadhayat")
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 23.w),
+                                            child: Text("search",style: TextStyle(
+                                                fontSize: 13
+                                            ),),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
