@@ -4,7 +4,7 @@ class AnalyticInfo {
   final String?  title,price;
   final int? count;
   final Color? color;
-  final Icon? svgSrc;
+  final IconData? svgSrc;
 
   AnalyticInfo({
     this.svgSrc,

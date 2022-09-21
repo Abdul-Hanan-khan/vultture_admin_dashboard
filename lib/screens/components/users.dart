@@ -64,12 +64,12 @@ class Users extends StatelessWidget {
                             borderRadius: BorderRadius.circular(3)
                           ),
                           child: Padding(
-                            padding:  EdgeInsets.symmetric(vertical: 8,horizontal:Responsive.isMobile(context)?15: 20),
+                            padding:  EdgeInsets.symmetric(vertical: 8,horizontal:Responsive.isDesktop(context)? 15:Responsive.isTablet(context)?12:10),
                             child: Text(
                               "+ 27%",
                               style: GoogleFonts.montserrat(
                                 // fontWeight: FontWeight.w700,
-                                fontSize: 15,
+                                fontSize: Responsive.isDesktop(context)? 15:Responsive.isTablet(context)?12:10,
                                 color: textColor,
                               ),
                             ),
@@ -105,7 +105,7 @@ class Users extends StatelessWidget {
                       "Invoice Overdue",
                       style: GoogleFonts.montserrat(
                         fontWeight: FontWeight.w700,
-                        fontSize: 15,
+                        fontSize: Responsive.isDesktop(context)? 15:Responsive.isTablet(context)?14:12,
                         color: textColor,
                       ),
                     ),
@@ -129,12 +129,12 @@ class Users extends StatelessWidget {
                               borderRadius: BorderRadius.circular(3)
                           ),
                           child: Padding(
-                            padding:  EdgeInsets.symmetric(vertical: 8,horizontal:Responsive.isMobile(context)?15: 20),
+                            padding:  EdgeInsets.symmetric(vertical: 8,horizontal:Responsive.isDesktop(context)? 15:Responsive.isTablet(context)?12:10),
                             child: Text(
                               "+ 27%",
                               style: GoogleFonts.montserrat(
                                 // fontWeight: FontWeight.w700,
-                                fontSize: 15,
+                                fontSize: Responsive.isDesktop(context)? 15:Responsive.isTablet(context)?14:12,
                                 color: textColor,
                               ),
                             ),

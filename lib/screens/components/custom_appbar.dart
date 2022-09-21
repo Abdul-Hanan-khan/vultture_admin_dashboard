@@ -39,7 +39,7 @@ class CustomAppbar extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(flex: 1, child: SearchField()),
+          Expanded(flex: 1, child: Container()),
           // ProfileInfo()
         ],
       ),
