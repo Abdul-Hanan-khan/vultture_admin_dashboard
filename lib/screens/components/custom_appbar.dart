@@ -29,9 +29,6 @@ class CustomAppbar extends StatelessWidget {
             flex: 3,
             child: Text(
               "Welcome to Vultture",
-
-
-
               style: GoogleFonts.montserrat(
                 color: textColor,
                 fontSize:Responsive.isMobile(context)?14: 25,
@@ -39,7 +36,7 @@ class CustomAppbar extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(flex: 1, child: SearchField()),
+          Expanded(flex: 1, child: Container()),
           // ProfileInfo()
         ],
       ),
