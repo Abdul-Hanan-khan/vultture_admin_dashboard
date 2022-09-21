@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_admin_dashboard/constants/constants.dart';
+import 'package:responsive_admin_dashboard/constants/responsive.dart';
 
 import 'bar_chart_users.dart';
 
@@ -16,7 +17,7 @@ class Users extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: 190,
+                height: 194,
                 width: double.infinity*0.7,
                 padding: EdgeInsets.all(appPadding),
                 decoration: BoxDecoration(
@@ -36,22 +37,52 @@ class Users extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Users",
+                      "New Clients",
                       style: GoogleFonts.montserrat(
                         fontWeight: FontWeight.w700,
                         fontSize: 15,
                         color: textColor,
                       ),
                     ),
-                    Expanded(
-                      child: BarChartUsers(),
+                    SizedBox(height:Responsive.isMobile(context)?30: 50,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "60",
+                          style: GoogleFonts.montserrat(
+                            // fontWeight: FontWeight.w700,
+                            fontSize: Responsive.isMobile(context)?15: 25,
+                            color: textColor,
+                          ),
+                        ),
+
+
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xffA5EE8E),
+                            borderRadius: BorderRadius.circular(3)
+                          ),
+                          child: Padding(
+                            padding:  EdgeInsets.symmetric(vertical: 8,horizontal:Responsive.isMobile(context)?15: 20),
+                            child: Text(
+                              "+ 27%",
+                              style: GoogleFonts.montserrat(
+                                // fontWeight: FontWeight.w700,
+                                fontSize: 15,
+                                color: textColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     )
                   ],
                 ),
               ),
               SizedBox(height: 10,),
               Container(
-                height: 190,
+                height: 194,
                 width: double.infinity*0.7,
                 padding: EdgeInsets.all(appPadding),
                 decoration: BoxDecoration(
@@ -71,15 +102,45 @@ class Users extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Users",
+                      "Invoice Overdue",
                       style: GoogleFonts.montserrat(
                         fontWeight: FontWeight.w700,
                         fontSize: 15,
                         color: textColor,
                       ),
                     ),
-                    Expanded(
-                      child: BarChartUsers(),
+                    SizedBox(height:Responsive.isMobile(context)?30: 50,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "32",
+                          style: GoogleFonts.montserrat(
+                            // fontWeight: FontWeight.w700,
+                            fontSize: Responsive.isMobile(context)?15: 25,
+                            color: textColor,
+                          ),
+                        ),
+
+
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Color(0xffCE6878),
+                              borderRadius: BorderRadius.circular(3)
+                          ),
+                          child: Padding(
+                            padding:  EdgeInsets.symmetric(vertical: 8,horizontal:Responsive.isMobile(context)?15: 20),
+                            child: Text(
+                              "+ 27%",
+                              style: GoogleFonts.montserrat(
+                                // fontWeight: FontWeight.w700,
+                                fontSize: 15,
+                                color: textColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     )
                   ],
                 ),
