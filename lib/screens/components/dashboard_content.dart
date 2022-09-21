@@ -91,7 +91,7 @@ class DashboardContent extends StatelessWidget {
                             SizedBox(
                               height: appPadding,
                             ),
-                          if (Responsive.isMobile(context)) RecentEmails(),
+                          // if (Responsive.isMobile(context)) RecentEmails(),
                           if (Responsive.isMobile(context)) RecentEmails(),
                           if (Responsive.isMobile(context))
                             SizedBox(
