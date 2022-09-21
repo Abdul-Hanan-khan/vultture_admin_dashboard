@@ -69,8 +69,8 @@ class DashboardContent extends StatelessWidget {
                           SizedBox(
                             height: appPadding,
                           ),
-                          // if (Responsive.isMobile(context))
-                          //   NewSearchWindow(),
+                          if (Responsive.isMobile(context))
+                            NewSearchWindow(),
                           Row(
                             children: [
                               if(!Responsive.isMobile(context))

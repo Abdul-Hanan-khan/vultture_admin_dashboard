@@ -16,7 +16,7 @@ class NewSearchWindow extends StatelessWidget {
             children: [
               Expanded(
                   flex: 1,
-                  
+
                   child: Container()),
               Expanded(
                 flex: 1,
@@ -147,7 +147,7 @@ class NewSearchWindow extends StatelessWidget {
                                   padding:  EdgeInsets.only(top: 11.h,left: 19.w,right: 15.w),
                                   child: Container(
 
-                                    
+
                                     height: 28.h,
                                     decoration: BoxDecoration(
                                       color: Colors.black12,
