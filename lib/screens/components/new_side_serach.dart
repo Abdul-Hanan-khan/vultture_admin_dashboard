@@ -35,6 +35,8 @@ class NewSearchWindow extends StatelessWidget {
                       Icon(Icons.date_range,color: Colors.white,size: Responsive.isDesktop(context)? 30:Responsive.isTablet(context)?20:18,),
                       Icon(Icons.notifications,color: Colors.white,size:  Responsive.isDesktop(context)? 30:Responsive.isTablet(context)?20:18,),
                       Icon(Icons.textsms_outlined,color: Colors.white,size: Responsive.isDesktop(context)? 30:Responsive.isTablet(context)?20:18,),
+
+
                       Container(
                         width: Responsive.isDesktop(context)? 30:Responsive.isTablet(context)?20:18,
                         height: Responsive.isDesktop(context)? 30:Responsive.isTablet(context)?20:18,
