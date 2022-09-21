@@ -24,7 +24,7 @@ class RecentEmails extends StatelessWidget {
           ),
         ],
         color: secondaryColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
