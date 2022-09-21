@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:responsive_admin_dashboard/constants/constants.dart';
+import 'package:responsive_admin_dashboard/constants/responsive.dart';
 import 'package:responsive_admin_dashboard/controllers/serach_controller.dart';
 
 class NewSearchWindow extends StatelessWidget {
@@ -15,10 +16,10 @@ class NewSearchWindow extends StatelessWidget {
             children: [
               Expanded(
                   flex: 1,
-
+                  
                   child: Container()),
               Expanded(
-                flex: 2,
+                flex: 1,
                 child: Container(
 
                   height: 70.h,
@@ -31,12 +32,12 @@ class NewSearchWindow extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Icon(Icons.date_range,color: Colors.white,),
-                      Icon(Icons.notifications,color: Colors.white,),
-                      Icon(Icons.textsms_outlined,color: Colors.white,),
+                      Icon(Icons.date_range,color: Colors.white,size: Responsive.isDesktop(context)? 30:Responsive.isTablet(context)?20:18,),
+                      Icon(Icons.notifications,color: Colors.white,size:  Responsive.isDesktop(context)? 30:Responsive.isTablet(context)?20:18,),
+                      Icon(Icons.textsms_outlined,color: Colors.white,size: Responsive.isDesktop(context)? 30:Responsive.isTablet(context)?20:18,),
                       Container(
-                        width: 30,
-                        height: 30,
+                        width: Responsive.isDesktop(context)? 30:Responsive.isTablet(context)?20:18,
+                        height: Responsive.isDesktop(context)? 30:Responsive.isTablet(context)?20:18,
                         decoration: BoxDecoration(
 
                           shape: BoxShape.circle,
